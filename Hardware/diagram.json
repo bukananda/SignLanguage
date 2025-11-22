@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "author": "Vico A.C. Silalahi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": 41.38,
+      "left": 271.72,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu2",
+      "top": 156.58,
+      "left": 271.72,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu3",
+      "top": 41.38,
+      "left": 415.72,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu4",
+      "top": 156.58,
+      "left": 415.72,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": -9.4,
+      "left": -466.2,
+      "rotate": 180,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot2",
+      "top": 86.6,
+      "left": -466.2,
+      "rotate": 180,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot3",
+      "top": 182.6,
+      "left": -466.2,
+      "rotate": 180,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot4",
+      "top": 288.2,
+      "left": -466.2,
+      "rotate": 180,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot5",
+      "top": 393.8,
+      "left": -466.2,
+      "rotate": 180,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot6",
+      "top": 499.4,
+      "left": -466.2,
+      "rotate": 180,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot7",
+      "top": 605,
+      "left": -466.2,
+      "rotate": 180,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot8",
+      "top": 701,
+      "left": -466.2,
+      "rotate": 180,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot9",
+      "top": 797,
+      "left": -466.2,
+      "rotate": 180,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot10",
+      "top": 893,
+      "left": -466.2,
+      "rotate": 180,
+      "attrs": { "travelLength": "30" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 1017.6, "left": -480.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "imu1:GND", "esp:GND.2", "black", [ "h-57.6", "v-19.1" ] ],
+    [ "imu2:GND", "esp:GND.2", "black", [ "h-57.6", "v-9.68" ] ],
+    [ "imu1:VCC", "esp:3V3.1", "red", [ "h-48", "v-48.08", "h-259.2", "v38.4" ] ],
+    [ "imu2:VCC", "esp:3V3.1", "red", [ "h-48", "v-163.28", "h-259.2", "v38.4" ] ],
+    [ "imu1:AD0", "esp:GND.3", "green", [ "h-134.4", "v124.82" ] ],
+    [ "imu2:AD0", "esp:3V3.2", "red", [ "h-48", "v86.42", "h-259.2", "v-259.2" ] ],
+    [ "imu3:VCC", "esp:3V3.1", "red", [ "h-48", "v-48.08", "h-403.2", "v38.4" ] ],
+    [ "imu4:VCC", "esp:3V3.1", "red", [ "h-48", "v-163.28", "h-403.2", "v38.4" ] ],
+    [ "imu3:AD0", "esp:GND.3", "green", [ "h-67.2", "v38.42", "h-211.2", "v76.8" ] ],
+    [ "imu4:AD0", "esp:3V3.2", "red", [ "h-48", "v86.42", "h-403.2", "v-259.2" ] ],
+    [ "imu3:GND", "esp:GND.2", "black", [ "h-76.8", "v-19.28" ] ],
+    [ "imu4:GND", "esp:GND.2", "black", [ "h-57.6", "v-38.48", "h-144", "v-96" ] ],
+    [ "imu4:SCL", "esp:42", "green", [ "h-76.8", "v-57.68", "h-163.2", "v-38.4" ] ],
+    [ "imu3:SCL", "esp:42", "green", [ "h-76.8", "v-48.08", "h-163.2", "v67.2" ] ],
+    [ "imu3:SDA", "esp:41", "orange", [ "h-67.2", "v-67.28", "h-182.4", "v86.4" ] ],
+    [
+      "imu4:SDA",
+      "esp:41",
+      "orange",
+      [ "h-76.8", "v-0.08", "h-9.6", "v-38.4", "h-201.6", "v-57.6" ]
+    ],
+    [ "imu1:SCL", "esp:40", "green", [ "h-163.2", "v47.92" ] ],
+    [ "imu2:SCL", "esp:40", "green", [ "h-163.2", "v-76.88" ] ],
+    [ "imu1:SDA", "esp:39", "orange", [ "h-38.4", "v38.32" ] ],
+    [ "imu2:SDA", "esp:39", "orange", [ "h-172.8", "v-76.88" ] ],
+    [ "pot1:SIG", "esp:3", "green", [ "h172.8", "v106.4" ] ],
+    [ "pot1:VCC", "esp:3V3.2", "red", [ "h192", "v-19.2" ] ],
+    [ "pot2:SIG", "esp:4", "green", [ "h220.8", "v-76" ] ],
+    [ "pot2:VCC", "esp:3V3.2", "red", [ "h192", "v-115.2" ] ],
+    [ "pot3:SIG", "esp:5", "green", [ "h211.2", "v-162.22" ] ],
+    [ "pot3:VCC", "esp:3V3.2", "red", [ "h192", "v-211.2" ] ],
+    [ "pot4:SIG", "esp:6", "green", [ "h201.6", "v-258.22" ] ],
+    [ "pot4:VCC", "esp:3V3.2", "red", [ "h192", "v-316.8" ] ],
+    [ "pot5:SIG", "esp:7", "green", [ "h182.4", "v-354.4" ] ],
+    [ "pot5:VCC", "esp:3V3.2", "red", [ "h192", "v-422.4" ] ],
+    [ "pot6:SIG", "esp:8", "green", [ "h144", "v-421.6", "h105.6", "v9.6" ] ],
+    [ "pot6:VCC", "esp:3V3.2", "red", [ "h192", "v-528" ] ],
+    [ "pot7:SIG", "esp:9", "green", [ "h249.6", "v-488.8" ] ],
+    [ "pot7:VCC", "esp:3V3.2", "red", [ "h192", "v-633.6" ] ],
+    [ "pot8:SIG", "esp:10", "green", [ "h230.4", "v-575.2" ] ],
+    [ "pot9:SIG", "esp:11", "green", [ "h220.8", "v-661.6" ] ],
+    [ "pot10:SIG", "esp:12", "green", [ "h172.8", "v-748" ] ],
+    [ "pot8:VCC", "esp:3V3.2", "red", [ "h192", "v-729.6" ] ],
+    [ "pot9:VCC", "esp:3V3.2", "red", [ "h192", "v-825.6" ] ],
+    [ "pot10:VCC", "esp:3V3.2", "red", [ "h192", "v-921.6" ] ],
+    [ "pot1:GND", "pot2:GND", "black", [ "v0" ] ],
+    [ "pot2:GND", "pot3:GND", "black", [ "v0" ] ],
+    [ "pot3:GND", "pot4:GND", "black", [ "v0" ] ],
+    [ "pot4:GND", "pot5:GND", "black", [ "v0" ] ],
+    [ "pot5:GND", "pot6:GND", "black", [ "v0" ] ],
+    [ "pot6:GND", "pot7:GND", "black", [ "v0" ] ],
+    [ "pot7:GND", "pot8:GND", "black", [ "v0" ] ],
+    [ "pot8:GND", "pot9:GND", "black", [ "v0" ] ],
+    [ "pot9:GND", "pot10:GND", "black", [ "v0" ] ],
+    [ "pot10:GND", "gnd1:GND", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
